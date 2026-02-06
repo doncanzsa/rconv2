@@ -17,6 +17,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#app {
+  width: 100%;
+}
+
 body {
   margin: 0;
   display: flex;

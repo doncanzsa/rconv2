@@ -1,0 +1,56 @@
+======================================================================
+GUÍA: DESPLIEGUE AUTOMÁTICO DE VUE 3 + VITE EN GITHUB PAGES
+======================================================================
+
+Para que un proyecto de Vite se publique correctamente en GitHub Pages,
+se necesitan 3 configuraciones clave:
+
+----------------------------------------------------------------------
+1. CONFIGURAR EL ARCHIVO 'vite.config.ts'
+----------------------------------------------------------------------
+Abre 'vite.config.ts' y añade la propiedad 'base'. 
+Debe llevar el nombre de tu repositorio rodeado de barras diagonales.
+
+export default defineConfig({
+  base: '/rconv2/', // REEMPLAZA CON EL NOMBRE DE TU REPO
+  plugins: [vue()],
+  // ... resto de tu config
+})
+
+----------------------------------------------------------------------
+2. CREAR EL WORKFLOW DE GITHUB ACTIONS
+----------------------------------------------------------------------
+Crea una carpeta llamada '.github' en la raíz, dentro otra llamada 
+'workflows', y dentro un archivo llamado 'deploy.yml'.
+
+El archivo ya está creado en este proyecto en: .github/workflows/deploy.yml
+
+----------------------------------------------------------------------
+3. ACTIVAR GITHUB ACTIONS EN LA WEB DE GITHUB (Solo 1 vez)
+----------------------------------------------------------------------
+1. Ve a tu repositorio en GitHub.com
+2. Haz clic en 'Settings' (Ajustes).
+3. En el menú izquierdo ve a 'Pages'.
+4. En 'Build and deployment' -> 'Source', cambia "Deploy from a branch"
+   por "GitHub Actions".
+
+----------------------------------------------------------------------
+4. COMANDOS PARA SUBIR CAMBIOS
+----------------------------------------------------------------------
+Cada vez que quieras actualizar tu web, solo haz un push normal:
+
+git add .
+git commit -m "Descripción del cambio"
+git push origin main
+
+GitHub detectará el cambio y en 1-2 minutos la web se actualizará sola.
+
+----------------------------------------------------------------------
+¿DÓNDE ESTÁ MI WEB?
+----------------------------------------------------------------------
+La URL siempre sigue este formato:
+https://tu-usuario.github.io/nombre-de-tu-repositorio/
+
+EJEMPLO DE ESTE PROYECTO:
+https://doncanzsa.github.io/rconv2/
+======================================================================

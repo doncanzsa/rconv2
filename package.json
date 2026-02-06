@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "pinia": "^2.3.1",
@@ -14,8 +15,21 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@cspell/eslint-plugin": "^8.16.1",
+    "@rushstack/eslint-patch": "^1.10.3",
+    "@types/node": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "@vue/eslint-config-typescript": "^13.0.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.13.1",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-vue": "^9.31.0",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.6.2",
